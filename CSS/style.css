@@ -4,31 +4,44 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-
-/* ============= Code Generator ============= */
-.centeralize{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+section{
+    margin: 50px 0;
 }
-.quote-box{
-    border: 1px solid gray;
-    height: 50px;
-    width: 600px;
-}
-textarea{
-    resize: none;
-    padding: 20px;
-    font-size: 18px;
-    font-family: inherit;
-}
-
-.gen-quote{
+button{
     margin: 30px 0;
     padding: 10px 20px;
     font-weight: bold;
     font-size: 17px;
 }
 
-/* ============= Code Generator ^ ============= */
+/* ============= Quote Generator ============= */
+.centeralize{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+textarea{
+    color: crimson;
+    resize: none;
+    padding: 20px;
+    font-size: 18px;
+    font-family: inherit;
+    border: 2px solid yellowgreen;
+}
+
+
+
+/* ============= Quote Generator ^ ============= */
+
+
+/* ============= Make a Friend ============= */
+#friend-list{
+    text-align: center;
+}
+#friend-img{
+    max-width: 50%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+/* ============= Make a Friend ^ ============= */
