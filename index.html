@@ -11,21 +11,31 @@
   </head>
   <body>
     <!-- ============= Quote Generator ============= -->
-    <section class="quote centeralize">
+    <section class="centeralize">
       <h2>Quote Generator</h2>
-      <textarea name="" id="quote-box" cols="100" rows="6"></textarea>
+      <textarea  id="quote-box" cols="100" rows="5"></textarea>
       <button onclick="genQuote()">New Quote</button>
     </section>
 
     <!-- ============= Random User ============= -->
-    <section class="random-user centeralize">
+    <section class="centeralize">
         <h2>Make New Friend Each Click</h2>
         <div id="friend-list">
-            <img src="" id="friend-img" alt="">
+            <img src="" id="friend-img">
             <h4>MY Friend: <span id="fnd-name"></span></h4>
             <h4>Country: <span id="fnd-country"></span></h4>
         </div>
         <button onclick="makeFriend()">Make Friend</button>
+    </section>
+
+    <!-- ============= Visit a New Place ============= -->
+    <section class="centeralize">
+      <h2>Your Next Tour will be.....</h2>
+      <div class="location">
+        <img src="" id="flag" alt="">
+        <h4>Location: <span id="tour-location"></span></h4>
+      </div>
+      <button onclick="nextTour()">Next Tour</button>
     </section>
 
     <!-- Link JS -->

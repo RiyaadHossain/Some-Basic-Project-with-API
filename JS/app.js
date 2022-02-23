@@ -33,3 +33,23 @@ const printFriend = (friend) => {
     console.log(friend.results[0])
 }
 /* =============== Make New Friend ^ =============== */
+
+
+/* =============== World Tour =============== */
+const tourLoc = document.getElementById('tour-location')
+const flag = document.getElementById('flag');
+const nextTour = () => {
+    const URL = 'https://restcountries.com/v3.1/all';
+    fetch(URL)
+    .then(res => res.json())
+    .then(data => printLocation(data))
+}
+
+const printLocation = location => {
+    const random = Math.floor(Math.random() * 251);
+    const country = location[random].name.common;
+    const city = location[random].capital;
+    tourLoc.innerText = ` ${city}, ${country}`
+    flag.src =  location[random].flags.png;
+}
+/* =============== World Tour ^ =============== */

@@ -40,8 +40,24 @@ textarea{
     text-align: center;
 }
 #friend-img{
-    max-width: 50%;
+    max-width: 100px;
     border-radius: 50%;
     margin: 0 auto;
 }
 /* ============= Make a Friend ^ ============= */
+
+
+
+/* ============= Tour Here ============= */
+
+#flag{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.location{
+    text-align: center;
+}
+
+/* ============= Tour Here ^ ============= */
