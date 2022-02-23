@@ -51,17 +51,30 @@ const printLocation = (location) => {
 };
 /* =============== World Tour ^ =============== */
 
+
+/* =============== Search Your Meal =============== */
+const foodContainer = document.getElementById("food-container");
+
 const hungryNaki = () => {
-  const inputMeal = document.getElementById("input-meal").value;
-  const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMeal}`;
-  fetch(URL)
-    .then((res) => res.json())
-    .then((data) => printMeal(data.meals));
+    const inputMeal = document.getElementById("input-meal").value;
+    if (inputMeal.length === 0) {
+        const img = document.createElement('img')
+        img.classList.add('mx-auto')
+        img.classList.add('mt-3')
+        img.src = '../Image/noresult.svg'
+        foodContainer.appendChild(img)
+  } else {
+    const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMeal}`;
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => printMeal(data.meals));
+      
+  }
 };
 
 const printMeal = (food) => {
-  const foodContainer = document.getElementById("food-container");
-  foodContainer.textContent = "";
+    foodContainer.textContent = "";
+    console.log(food)
   food.forEach((element) => {
     //   console.log(element)
     const itemContainer = document.createElement("div");
@@ -71,11 +84,7 @@ const printMeal = (food) => {
             <img src="${element.strMealThumb}" class="card-img-top" alt="">
             <div class="card-body">
               <h5 class="card-title">${element.strMeal}</h5>
-              <p class="card-text">This recipi is a "${
-                element.strCategory
-              }" typed food which is originated from "${
-      element.strArea
-    }" region.</p>
+              <p class="card-text">This recipi is a "${element.strCategory}" typed food which is originated from "${element.strArea}" region.</p>
             </div>
           </div>
         `;
@@ -84,31 +93,34 @@ const printMeal = (food) => {
 };
 
 const details = (foodItem) => {
-    const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodItem}`
-    
-    fetch(URL)
-    .then(res => res.json())
-    .then(data => printFoodItem(data))
+  const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${foodItem}`;
 
+  fetch(URL)
+    .then((res) => res.json())
+    .then((data) => printFoodItem(data));
 };
 
 const printFoodItem = (data) => {
-    const foodItem = data.meals[0]
-    const itemContainer = document.getElementById("item-details");
-    itemContainer.textContent = ''
-    const singleItem = document.createElement("div");
-    singleItem.innerHTML = `
+  const foodItem = data.meals[0];
+  const itemContainer = document.getElementById("item-details");
+  itemContainer.textContent = "";
+  const singleItem = document.createElement("div");
+  singleItem.innerHTML = `
       <div class="card" style="width: 18rem">
-            <img src="${foodItem.strMealThumb}" class="card-img-top" alt="..." />
+            <img src="${
+              foodItem.strMealThumb
+            }" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">${foodItem.strMeal}</h5>
               <p class="card-text">
               ${foodItem.strInstructions.slice(0, 100)}
               </p>
-              <a href="${foodItem.strYoutube}" class="btn btn-primary">Go somewhere</a>
+              <a href="${
+                foodItem.strYoutube
+              }" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
       `;
-    console.log(foodItem)
-      itemContainer.appendChild(singleItem)
-}
+  console.log(foodItem);
+  itemContainer.appendChild(singleItem);
+};
