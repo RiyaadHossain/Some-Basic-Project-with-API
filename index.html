@@ -23,57 +23,72 @@
     <section class="centeralize">
       <h2>Quote Generator</h2>
       <textarea id="quote-box" cols="100" rows="5"></textarea>
-      <button onclick="genQuote()">New Quote</button>
+      <button class="my-4" onclick="genQuote()">New Quote</button>
     </section>
 
     <!-- ============= Random User ============= -->
     <section class="centeralize">
       <h2>Make New Friend Each Click</h2>
       <div id="friend-list">
-        <img src="" id="friend-img" />
+        <img
+          src="./Image/depositphotos_73899277-stock-illustration-best-friends.webp"
+          id="friend-img"
+        />
         <h4>MY Friend: <span id="fnd-name"></span></h4>
         <h4>Country: <span id="fnd-country"></span></h4>
       </div>
-      <button onclick="makeFriend()">Make Friend</button>
+      <button class="my-4" onclick="makeFriend()">Make Friend</button>
     </section>
 
     <!-- ============= Visit a New Place ============= -->
     <section class="centeralize">
       <h2>Your Next Tour will be.....</h2>
       <div class="location">
-        <img src="" id="flag" alt="" />
-        <h4>Location: <span id="tour-location"></span></h4>
+        <img
+          src="./Image/main-qimg-98dda5ce73c0730600e4c61d7aca3331.jpg"
+          id="flag"
+          alt=""
+        />
+        <h4 class="mt-2">
+          Location: <span id="tour-location">Entire World</span>
+        </h4>
       </div>
-      <button onclick="nextTour()">Next Tour</button>
+      <button class="my-4" onclick="nextTour()">Next Tour</button>
     </section>
 
     <!-- ============= Search you Food ============= -->
     <section class="centeralize">
       <h2>Serch What You want to Eat</h2>
 
+      <div id="item-details">
+        <div class="card" style="width: 18rem">
+          <img src="./Image/food.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Food Item</h5>
+            <p class="card-text">
+              Food Details goes here. We keep some details about your selected food item to inform you about the desired procudt. Keep eating :)
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
       <!-- Search Button -->
       <div class="">
         <div class="input-group input-group-lg mt-5 mb-4">
-          <input id="input-meal" type="text" class="form-control" placeholder="I want to Eat....">
-          <button class="btn btn-primary" onclick="hungryNaki()">I'm Hungry</button>
+          <input
+            id="input-meal"
+            type="text"
+            class="form-control"
+            placeholder="I want to Eat...."
+          />
+          <button class="btn btn-primary" onclick="hungryNaki()">
+            I'm Hungry
+          </button>
         </div>
       </div>
-
 
       <!-- Show Search Result -->
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <!-- Card -->
-        <div class="col">
-          <div class="card">
-            <img src="" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-        <!-- Card  -->
-      </div>
+      <div id="food-container" class="row row-cols-1 row-cols-md-2 g-4"></div>
     </section>
 
     <!-- Link JS -->

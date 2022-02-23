@@ -40,9 +40,12 @@ textarea{
     text-align: center;
 }
 #friend-img{
-    max-width: 100px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 50%;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
 /* ============= Make a Friend ^ ============= */
 
@@ -52,6 +55,8 @@ textarea{
 
 #flag{
     width: 250px;
+    height: 250px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .location{
