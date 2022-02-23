@@ -30,7 +30,6 @@ const printFriend = (friend) => {
     friendName.innerText = name;
     friendLocation.innerText = `${friendsss.location.country}`
     friendImg.src = `${friendsss.picture.large}`
-    console.log(friend.results[0])
 }
 /* =============== Make New Friend ^ =============== */
 
@@ -53,3 +52,17 @@ const printLocation = location => {
     flag.src =  location[random].flags.png;
 }
 /* =============== World Tour ^ =============== */
+
+
+const hungryNaki = () => {
+    const inputMeal = document.getElementById('input-meal').value
+    const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputMeal}`
+    fetch(URL)
+    .then(res => res.json())
+    .then(data => printMeal(data))
+
+}
+
+const printMeal = (food) => {
+    console.log(food.meals)
+}
